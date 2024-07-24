@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         eyebrow: './assets/eyebrow',
         hairstyle: './assets/hairstyle',
         pupil: './assets/pupil',
+        IIRHand: './assets/Item_in_hand'
     };
 
     const canvas = document.getElementById('result');
@@ -19,30 +20,37 @@ document.addEventListener("DOMContentLoaded", function () {
         const eyebrow = document.getElementById('eyebrows').value;
         const emotion = document.getElementById('emotion').value;
         const hairstyle = document.getElementById('hairstyle').value;
+        const IIRHand = document.getElementById('IIRHand').value;
 
         canvas.width = 600;
         canvas.height = 600;
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        function drawImage(type, number, x, y) {
+        function drawImage(type, number, x, y, angle = 0) {
             return new Promise((resolve) => {
                 const img = new Image();
                 img.src = `${assets[type]}/${number}.png`;
                 img.onload = function () {
                     const originalWidth = img.width;
                     const originalHeight = img.height;
-                    ctx.drawImage(img, x, y, originalWidth, originalHeight);
+                    ctx.save();
+                    ctx.translate(x + originalWidth / 2, y + originalHeight / 2);
+                    ctx.rotate(angle * Math.PI / 180);
+                    ctx.drawImage(img, -originalWidth / 2, -originalHeight / 2, originalWidth, originalHeight);
+                    ctx.restore();
                     resolve();
                 };
             });
         }
 
         async function drawAllImages() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
             if (foundation !== "0") await drawImage("foundation", foundation, 0, 0);
+
             if (pupil1 !== "0") await drawImage("pupil", pupil1, 214, 120);
             if (pupil2 !== "0") await drawImage("pupil", pupil2, 313, 120);
             if (eyebrow !== "0") await drawImage("eyebrow", eyebrow, 196, 85);
+
             if (hairstyle !== "0") {
                 let x = 156;
                 let y = 40;
@@ -54,7 +62,44 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 await drawImage("hairstyle", hairstyle, x, y);
             }
+
             if (emotion !== "0") await drawImage("emotion", emotion, 241, 211);
+
+            if (IIRHand !== "0") {
+                let x;
+                let y;
+                let rotate = 0;
+                switch (IIRHand) {
+                    case "1":
+                        x = 336;
+                        y = 226;
+                        break;
+                    case "2":
+                        x = 336;
+                        y = 241;
+                        break;
+                    case "3":
+                        x = 336;
+                        y = 241;
+                        break;
+                    case "4":
+                        x = 337;
+                        y = 236;
+                        rotate = 90;
+                        break;
+                    case "5":
+                        x = 307;
+                        y = 246;
+                        rotate = 60;
+                        break;
+                    case "6":
+                        x = 336;
+                        y = 241;
+                        rotate = 0;
+                        break;
+                }
+                await drawImage("IIRHand", IIRHand, x, y, rotate);
+            }
         }
 
         drawAllImages().then(() => {
