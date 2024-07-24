@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const assets = {
-        base: '/assets',
-        foundation: '/assets/foundation',
-        emotion: '/assets/emotion',
-        eyebrow: '/assets/eyebrow',
-        hairstyle: '/assets/hairstyle',
-        pupil: '/assets/pupil',
+        base: './assets',
+        foundation: './assets/foundation',
+        emotion: './assets/emotion',
+        eyebrow: './assets/eyebrow',
+        hairstyle: './assets/hairstyle',
+        pupil: './assets/pupil',
     };
 
     const nameFH = document.getElementById('nameFH').value;
