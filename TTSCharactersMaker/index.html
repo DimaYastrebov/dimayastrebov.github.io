@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTS Character Maker || By DimaYastrebov, Pugum</title>
+    <link rel="stylesheet" href="./yastrekit-2.3.css">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="./yastrekit-2.3.js"></script>
+    <script src="./generate.js"></script>
+    <style>
+        fieldset {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        legend {
+            text-align: center;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .form-group {
+            margin-bottom: 6px;
+        }
+
+        .form-group label {
+            display: block;
+            max-width: 100px;
+            width: 100%;
+        }
+
+        .form-group input,
+        .form-group select {
+            margin-right: 6px;
+            margin-bottom: 0;
+        }
+
+        .pt1 {
+            margin-bottom: 10px;
+        }
+
+        .rf1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="IPB">
+        <div class="IPBContent">
+            <div class="heading">
+                <h1>TTS Character Maker</h1>
+                <p class="IPBContentPHeading">Генератор персонажей для смешных ошибок Windows.</p>
+            </div>
+        </div>
+    </div>
+    <div class="body-content flex justify-content-center">
+        <fieldset>
+            <legend>
+                <h3 class="margin0 no-padding">Параметры для генерации</h3>
+            </legend>
+            <form id="generateForm">
+                <div class="form-group align-items-center">
+                    <label for="foundation">Имя [файла]</label>
+                    <input type="text" name="nameFH" id="nameFH" placeholder="Герой" required>
+                </div>
+                <div class="form-group align-items-center">
+                    <label for="foundation">Основание</label>
+                    <select id="foundation" name="foundation" required>
+                        <!-- <option value="0">Нет основания</option> -->
+                        <option value="1" selected>1-ый тип основания</option>
+                    </select>
+                </div>
+
+                <div class="form-group align-items-start justify-content-space-between">
+                    <div class="flex flex-row">
+                        <div class="rf1">
+                            <label for="pupil1">Зрачок 1</label>
+                            <select id="pupil1" name="pupil1" required>
+                                <option value="0">Нет зрачка</option>
+                                <option value="1">Тип 1</option>
+                                <option value="2">Тип 2</option>
+                                <option value="3">Тип 3</option>
+                                <option value="4">Тип 4</option>
+                                <option value="5">Тип 5</option>
+                                <option value="6">Тип 6</option>
+                                <option value="7">Тип 7</option>
+                                <option value="8">Тип 8</option>
+                                <option value="9">Тип 9</option>
+                            </select>
+                        </div>
+                        <div class="rf1">
+                            <label for="pupil2">Зрачок 2</label>
+                            <select id="pupil2" name="pupil2" required>
+                                <option value="0">Нет зрачка</option>
+                                <option value="1">Тип 1</option>
+                                <option value="2">Тип 2</option>
+                                <option value="3">Тип 3</option>
+                                <option value="4">Тип 4</option>
+                                <option value="5">Тип 5</option>
+                                <option value="6">Тип 6</option>
+                                <option value="7">Тип 7</option>
+                                <option value="8">Тип 8</option>
+                                <option value="9">Тип 9</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="rf1">
+                        <input type="checkbox" id="samePupils" name="samePupils">
+                        <label for="samePupils">Одинаковые</label>
+                    </div>
+                </div>
+
+                <div class="form-group align-items-center">
+                    <label for="eyebrows">Брови</label>
+                    <select id="eyebrows" name="eyebrows" required>
+                        <option value="0">Нет бровей</option>
+                        <option value="1">Тип 1</option>
+                        <option value="2">Тип 2</option>
+                        <option value="3">Тип 3</option>
+                        <option value="4">Тип 4</option>
+                        <option value="5">Тип 5</option>
+                        <option value="6">Тип 6</option>
+                        <option value="7">Тип 7</option>
+                        <option value="8">Тип 8</option>
+                        <option value="9">Тип 9</option>
+                        <option value="10">Тип 10</option>
+                    </select>
+                </div>
+
+                <div class="form-group align-items-center">
+                    <label for="emotion">Эмоция</label>
+                    <select id="emotion" name="emotion" required>
+                        <option value="0">Нет эмоции</option>
+                        <option value="1">Эмоция 1</option>
+                        <option value="2">Эмоция 2</option>
+                        <option value="3">Эмоция 3</option>
+                        <option value="4">Эмоция 4</option>
+                        <option value="5">Эмоция 5</option>
+                        <option value="6">Эмоция 6</option>
+                        <option value="7">Эмоция 7</option>
+                    </select>
+                </div>
+
+                <div class="form-group align-items-center">
+                    <label for="hairstyle">Причёска</label>
+                    <select id="hairstyle" name="hairstyle" required>
+                        <option value="0">Нет причёски</option>
+                        <option value="1">Причёска 1</option>
+                        <option value="2">Причёска 2</option>
+                    </select>
+                </div>
+                <br>
+                <button type="submit" id="submit">Сгенерировать</button>
+            </form>
+            <hr>
+            <h4 class="flex justify-content-center">Предпросмотр</h4>
+            <div class="flex justify-content-center">
+                <canvas id="result" width="600" height="600"></canvas>
+            </div>
+        </fieldset>
+    </div>
+    <footer>
+        <footer-content>
+            <first-footer-content>
+                <first-footer-content-center>
+                    <h3 class="footer-site-copy">
+                        <SITE_COPY>&copy; DimaYastrebov, Pugum</SITE_COPY>
+                    </h3>
+                </first-footer-content-center>
+        </footer-content>
+    </footer>
+    <script>
+        const pupil1 = document.getElementById('pupil1');
+        const pupil2 = document.getElementById('pupil2');
+        const samePupils = document.getElementById('samePupils');
+
+        let previousPupil2Value = pupil2.value;
+
+        samePupils.addEventListener('change', function () {
+            if (this.checked) {
+                previousPupil2Value = pupil2.value;
+                pupil2.value = pupil1.value;
+                pupil2.disabled = true;
+            } else {
+                pupil2.disabled = false;
+                pupil2.value = previousPupil2Value;
+            }
+        });
+
+        pupil1.addEventListener('change', function () {
+            if (samePupils.checked) {
+                pupil2.value = this.value;
+            }
+        });
+
+        pupil2.addEventListener('change', function () {
+            previousPupil2Value = pupil2.value;
+        });
+    </script>
+</body>
+
+</html>
