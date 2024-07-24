@@ -2,24 +2,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const assets = {
         base: './assets',
         foundation: './assets/foundation',
-        emotion: './assets/emotion',
+        emotion: ',/assets/emotion',
         eyebrow: './assets/eyebrow',
         hairstyle: './assets/hairstyle',
         pupil: './assets/pupil',
     };
 
-    const nameFH = document.getElementById('nameFH').value;
-    const foundation = document.getElementById('foundation').value;
-    const pupil1 = document.getElementById('pupil1').value;
-    const pupil2 = document.getElementById('pupil2').value;
-    const eyebrow = document.getElementById('eyebrows').value;
-    const emotion = document.getElementById('emotion').value;
-    const hairstyle = document.getElementById('hairstyle').value;
-
     const canvas = document.getElementById('result');
     const ctx = canvas.getContext('2d');
 
     function processFormAndGenerateCanvas() {
+        const nameFH = document.getElementById('nameFH').value;
+        const foundation = document.getElementById('foundation').value;
+        const pupil1 = document.getElementById('pupil1').value;
+        const pupil2 = document.getElementById('pupil2').value;
+        const eyebrow = document.getElementById('eyebrows').value;
+        const emotion = document.getElementById('emotion').value;
+        const hairstyle = document.getElementById('hairstyle').value;
+        
         canvas.width = 600;
         canvas.height = 600;
 
