@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const assets = {
         base: './assets',
         foundation: './assets/foundation',
-        emotion: ',/assets/emotion',
+        emotion: './assets/emotion',
         eyebrow: './assets/eyebrow',
         hairstyle: './assets/hairstyle',
         pupil: './assets/pupil',
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const eyebrow = document.getElementById('eyebrows').value;
         const emotion = document.getElementById('emotion').value;
         const hairstyle = document.getElementById('hairstyle').value;
-        
+
         canvas.width = 600;
         canvas.height = 600;
 
