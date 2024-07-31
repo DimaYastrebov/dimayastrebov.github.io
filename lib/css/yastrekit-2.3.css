@@ -2047,7 +2047,7 @@ footer {
     color: var(--footer-color);
 }
 
-footer hr {
+hr {
     border-color: var(--footer-border-color);
     margin: 10px 0;
     width: 100%;
@@ -2215,6 +2215,14 @@ versioninfo {
 .chips-block .chip:hover,
 .chips-block .chip[hover] {
     background: var(--chip-hover-background);
+}
+
+.p-chip {
+    font-size: 15px;
+    background-color: #000;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: .05rem .35rem;
 }
 
 /* Loader */
@@ -2412,7 +2420,7 @@ fieldset {
     border-radius: var(--fieldset-border-radius);
     border-color: var(--fieldset-border-color);
     border-style: solid;
-    max-width: 640px;
+    max-width: 800px;
 }
 
 fieldset legend {
@@ -2429,4 +2437,31 @@ mark {
 mark::selection {
     background: var(--black);
     color: var(--main-color);
+}
+
+/* inputPrefix */
+
+.inputPrefix {
+    width: max-content;
+    height: max-content;
+    background: var(--gray650);
+    padding: 3px 4px 4px 4px;
+    margin-right: 4px;
+    border-radius: 4px;
+}
+
+/* dow and dowc */
+
+.dow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.dowc {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
