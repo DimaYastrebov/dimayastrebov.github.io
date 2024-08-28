@@ -2470,9 +2470,11 @@ mark::selection {
 
 .icons-grid {
     display: flex;
-    max-width: 640px;
+    flex-wrap: wrap;
+    max-width: 612px;
     width: 100%;
     padding: 6px;
+    overflow: hidden;
 }
 
 .icons-grid .icon-tile {
