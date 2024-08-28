@@ -1,5 +1,5 @@
 /* 
-    Hello World. YastreKit CSS, 0.2.3.
+    Hello World. YastreKit CSS, 0.2.4.
     By DimaYastrebov, https://www.dimayastrebov.website.
 
     2022-2024.
@@ -1351,7 +1351,7 @@ header.scrolled .item:hover {
 }
 
 .IPB {
-    background-color: #772953;
+    background-color: var(--IPB2Color);
     background-image: linear-gradient(to bottom left, rgba(119, 41, 83, 0.16) 0, rgba(119, 41, 83, 0.16) 49.9%, transparent 50%), linear-gradient(to bottom right, rgba(228, 228, 228, 0.5) 0, rgba(228, 228, 228, 0.5) 49.9%, transparent 50%), linear-gradient(to top left, var(--color-IPB) 0%, var(--color-IPB-2) 49.3%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(-89deg, var(--IPB1Color) 0%, var(--IPB2Color) 42%, var(--IPB3Color) 94%);
     color: #fff;
     align-items: center;
@@ -2439,9 +2439,9 @@ mark::selection {
     color: var(--main-color);
 }
 
-/* inputPrefix */
+/* input prefix */
 
-.inputPrefix {
+.input-prefix {
     width: max-content;
     height: max-content;
     background: var(--gray650);
@@ -2464,4 +2464,27 @@ mark::selection {
     flex-direction: column;
     margin-top: 4px;
     margin-bottom: 4px;
+}
+
+/* icons grid */
+
+.icons-grid {
+    display: flex;
+    max-width: 640px;
+    width: 100%;
+    padding: 6px;
+}
+
+.icons-grid .icon-tile {
+    background: var(--gray700);
+    padding: 6px;
+    margin: 0 6px 6px 0;
+}
+
+.icons-grid .icon-id {
+    text-align: center;
+}
+
+.icons-grid .icon-tile img {
+    user-select: none;
 }
